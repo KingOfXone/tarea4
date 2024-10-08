@@ -16,11 +16,10 @@ builder.Services.AddDbContextFactory<Contexto>(op => op.UseSqlite(ConStr));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+
+app.UseSwagger();
+app.UseSwaggerUI();
+
 
 app.UseCors(op => op.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
